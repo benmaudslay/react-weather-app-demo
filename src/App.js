@@ -15,7 +15,8 @@ const App = () => {
       const response = await fetch(
         `http://api.openweathermap.org/data/2.5/weather?q=${search},GB&appid=${API_KEY}&units=metric`
       );
-      if (response.code !== 200) {
+      console.log(response);
+      if (response.status !== 200) {
         throw new Error("Failed to fetch");
       }
       const data = await response.json();
